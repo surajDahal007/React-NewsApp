@@ -3,12 +3,11 @@ import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
 
-
 export class News extends Component {
 
   static defaultProps = {
     country: 'us',
-    pageSize: 10
+    pageSize: 10,
   }
 
   static propTypes = {
@@ -28,6 +27,8 @@ export class News extends Component {
 
   async componentDidMount(){
     console.log('inside component did mount.');
+    console.log(this.props.apiKey);
+    
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bba8c05cd7a3403c8793bfdcfec56c20&page=1&pageSize=${this.props.pageSize}`;
 
     // loading true, spinner will be displayed
@@ -65,7 +66,7 @@ export class News extends Component {
   handlePrevClick = async()=>{
     console.log('inside prevClick');
     
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bba8c05cd7a3403c8793bfdcfec56c20&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     
     // loading true, spinner will be displayed
     this.setState({loading:true})
