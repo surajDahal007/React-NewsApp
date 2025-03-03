@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import News from "./components/News";
 
 export default class App extends Component {
-  user = "John";
   render() {
     return (
       <div>

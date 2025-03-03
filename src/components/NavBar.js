@@ -3,7 +3,10 @@ import React, { Component } from "react";
 export default class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        className="navbar bg-dark border-bottom border-body navbar-expand-lg"
+        data-bs-theme="dark"
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             NewsApp
